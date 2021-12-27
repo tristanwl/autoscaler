@@ -291,37 +291,37 @@ func (o NicProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Mac != nil {
 		toSerialize["mac"] = o.Mac
 	}
-	
+
 
 	if o.Ips != nil {
 		toSerialize["ips"] = o.Ips
 	}
-	
+
 
 	if o.Dhcp != nil {
 		toSerialize["dhcp"] = o.Dhcp
 	}
-	
+
 
 	if o.Lan != nil {
 		toSerialize["lan"] = o.Lan
 	}
-	
+
 
 	if o.FirewallActive != nil {
 		toSerialize["firewallActive"] = o.FirewallActive
 	}
-	
+
 
 	if o.Nat != nil {
 		toSerialize["nat"] = o.Nat
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -360,5 +360,3 @@ func (v *NullableNicProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

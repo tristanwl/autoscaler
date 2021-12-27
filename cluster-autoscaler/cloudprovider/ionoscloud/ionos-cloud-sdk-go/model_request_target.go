@@ -99,12 +99,12 @@ func (o RequestTarget) MarshalJSON() ([]byte, error) {
 	if o.Target != nil {
 		toSerialize["target"] = o.Target
 	}
-	
+
 
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -143,5 +143,3 @@ func (v *NullableRequestTarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

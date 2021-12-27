@@ -99,12 +99,12 @@ func (o GroupEntities) MarshalJSON() ([]byte, error) {
 	if o.Users != nil {
 		toSerialize["users"] = o.Users
 	}
-	
+
 
 	if o.Resources != nil {
 		toSerialize["resources"] = o.Resources
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -143,5 +143,3 @@ func (v *NullableGroupEntities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

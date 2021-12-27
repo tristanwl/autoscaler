@@ -17,7 +17,7 @@ import (
 
 // UserMetadata struct for UserMetadata
 type UserMetadata struct {
-	// Resource's Entity Tag as defined in http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.11 . Entity Tag is also added as an 'ETag response header to requests which don't use 'depth' parameter. 
+	// Resource's Entity Tag as defined in http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.11 . Entity Tag is also added as an 'ETag response header to requests which don't use 'depth' parameter.
 	Etag *string `json:"etag,omitempty"`
 	// time of creation of the user
 	CreatedDate *time.Time `json:"createdDate,omitempty"`
@@ -140,17 +140,17 @@ func (o UserMetadata) MarshalJSON() ([]byte, error) {
 	if o.Etag != nil {
 		toSerialize["etag"] = o.Etag
 	}
-	
+
 
 	if o.CreatedDate != nil {
 		toSerialize["createdDate"] = o.CreatedDate
 	}
-	
+
 
 	if o.LastLogin != nil {
 		toSerialize["lastLogin"] = o.LastLogin
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -189,5 +189,3 @@ func (v *NullableUserMetadata) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -101,12 +101,12 @@ func (o KubernetesNodePoolAnnotation) MarshalJSON() ([]byte, error) {
 	if o.Key != nil {
 		toSerialize["key"] = o.Key
 	}
-	
+
 
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -145,5 +145,3 @@ func (v *NullableKubernetesNodePoolAnnotation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

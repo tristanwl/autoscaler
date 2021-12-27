@@ -28,17 +28,17 @@ data := "example"
 
 // 2.x usage
 rules := validation.Rules{
-	validation.Required,      
+	validation.Required,
 	validation.Length(5, 100),
-	is.URL,                   
+	is.URL,
 }
 err := rules.Validate(data)
 
 // 3.x usage
 err := validation.Validate(data,
-	validation.Required,      
+	validation.Required,
 	validation.Length(5, 100),
-	is.URL,                   
+	is.URL,
 )
 ```
 

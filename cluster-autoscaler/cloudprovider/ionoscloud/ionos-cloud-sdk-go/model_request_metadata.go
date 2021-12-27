@@ -21,7 +21,7 @@ type RequestMetadata struct {
 	CreatedDate *time.Time `json:"createdDate,omitempty"`
 	// The user who created the resource.
 	CreatedBy *string `json:"createdBy,omitempty"`
-	// Resource's Entity Tag as defined in http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.11 . Entity Tag is also added as an 'ETag response header to requests which don't use 'depth' parameter. 
+	// Resource's Entity Tag as defined in http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.11 . Entity Tag is also added as an 'ETag response header to requests which don't use 'depth' parameter.
 	Etag *string `json:"etag,omitempty"`
 	RequestStatus *RequestStatus `json:"requestStatus,omitempty"`
 }
@@ -177,22 +177,22 @@ func (o RequestMetadata) MarshalJSON() ([]byte, error) {
 	if o.CreatedDate != nil {
 		toSerialize["createdDate"] = o.CreatedDate
 	}
-	
+
 
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
-	
+
 
 	if o.Etag != nil {
 		toSerialize["etag"] = o.Etag
 	}
-	
+
 
 	if o.RequestStatus != nil {
 		toSerialize["requestStatus"] = o.RequestStatus
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -231,5 +231,3 @@ func (v *NullableRequestMetadata) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

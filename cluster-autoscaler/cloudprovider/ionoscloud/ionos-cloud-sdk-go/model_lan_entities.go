@@ -62,7 +62,7 @@ func (o LanEntities) MarshalJSON() ([]byte, error) {
 	if o.Nics != nil {
 		toSerialize["nics"] = o.Nics
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -101,5 +101,3 @@ func (v *NullableLanEntities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

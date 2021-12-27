@@ -62,7 +62,7 @@ func (o NicEntities) MarshalJSON() ([]byte, error) {
 	if o.Firewallrules != nil {
 		toSerialize["firewallrules"] = o.Firewallrules
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -101,5 +101,3 @@ func (v *NullableNicEntities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -26,7 +26,7 @@ Go 1.8 or above.
 
 ## Getting Started
 
-The ozzo-validation package mainly includes a set of validation rules and two validation methods. You use 
+The ozzo-validation package mainly includes a set of validation rules and two validation methods. You use
 validation rules to describe how a value should be considered valid, and you call either `validation.Validate()`
 or `validation.ValidateStruct()` to validate the value.
 
@@ -42,7 +42,7 @@ go get github.com/go-ozzo/ozzo-validation/is
 
 ### Validating a Simple Value
 
-For a simple value, such as a string or an integer, you may use `validation.Validate()` to validate it. For example, 
+For a simple value, such as a string or an integer, you may use `validation.Validate()` to validate it. For example,
 
 ```go
 package main
@@ -77,7 +77,7 @@ return nil if the value passes all validation rules.
 For a struct value, you usually want to check if its fields are valid. For example, in a RESTful application, you
 may unmarshal the request payload into a struct and then validate the struct fields. If one or multiple fields
 are invalid, you may want to get an error describing which fields are invalid. You can use `validation.ValidateStruct()`
-to achieve this purpose. A single struct can have rules for multiple fields, and a field can be associated with multiple 
+to achieve this purpose. A single struct can have rules for multiple fields, and a field can be associated with multiple
 rules. For example,
 
 ```go
@@ -126,22 +126,22 @@ func main() {
 }
 ```
 
-Note that when calling `validation.ValidateStruct` to validate a struct, you should pass to the method a pointer 
+Note that when calling `validation.ValidateStruct` to validate a struct, you should pass to the method a pointer
 to the struct instead of the struct itself. Similarly, when calling `validation.Field` to specify the rules
-for a struct field, you should use a pointer to the struct field. 
+for a struct field, you should use a pointer to the struct field.
 
-When the struct validation is performed, the fields are validated in the order they are specified in `ValidateStruct`. 
+When the struct validation is performed, the fields are validated in the order they are specified in `ValidateStruct`.
 And when each field is validated, its rules are also evaluated in the order they are associated with the field.
 If a rule fails, an error is recorded for that field, and the validation will continue with the next field.
 
 
 ### Validation Errors
 
-The `validation.ValidateStruct` method returns validation errors found in struct fields in terms of `validation.Errors` 
+The `validation.ValidateStruct` method returns validation errors found in struct fields in terms of `validation.Errors`
 which is a map of fields and their corresponding errors. Nil is returned if validation passes.
 
-By default, `validation.Errors` uses the struct tags named `json` to determine what names should be used to 
-represent the invalid fields. The type also implements the `json.Marshaler` interface so that it can be marshaled 
+By default, `validation.Errors` uses the struct tags named `json` to determine what names should be used to
+represent the invalid fields. The type also implements the `json.Marshaler` interface so that it can be marshaled
 into a proper JSON object. For example,
 
 ```go
@@ -185,13 +185,13 @@ fmt.Println(err)
 // email: must be a valid email address; zip: cannot be blank.
 ```
 
-In the above example, we build a `validation.Errors` by a list of names and the corresponding validation results. 
-At the end we call `Errors.Filter()` to remove from `Errors` all nils which correspond to those successful validation 
+In the above example, we build a `validation.Errors` by a list of names and the corresponding validation results.
+At the end we call `Errors.Filter()` to remove from `Errors` all nils which correspond to those successful validation
 results. The method will return nil if `Errors` is empty.
 
 The above approach is very flexible as it allows you to freely build up your validation error structure. You can use
-it to validate both struct and non-struct values. Compared to using `ValidateStruct` to validate a struct, 
-it has the drawback that you have to redundantly specify the error keys while `ValidateStruct` can automatically 
+it to validate both struct and non-struct values. Compared to using `ValidateStruct` to validate a struct,
+it has the drawback that you have to redundantly specify the error keys while `ValidateStruct` can automatically
 find them out.
 
 
@@ -219,15 +219,15 @@ if err := a.Validate(); err != nil {
 
 ## Validatable Types
 
-A type is validatable if it implements the `validation.Validatable` interface. 
+A type is validatable if it implements the `validation.Validatable` interface.
 
-When `validation.Validate` is used to validate a validatable value, if it does not find any error with the 
-given validation rules, it will further call the value's `Validate()` method. 
+When `validation.Validate` is used to validate a validatable value, if it does not find any error with the
+given validation rules, it will further call the value's `Validate()` method.
 
-Similarly, when `validation.ValidateStruct` is validating a struct field whose type is validatable, it will call 
-the field's `Validate` method after it passes the listed rules. 
+Similarly, when `validation.ValidateStruct` is validating a struct field whose type is validatable, it will call
+the field's `Validate` method after it passes the listed rules.
 
-In the following example, the `Address` field of `Customer` is validatable because `Address` implements 
+In the following example, the `Address` field of `Customer` is validatable because `Address` implements
 `validation.Validatable`. Therefore, when validating a `Customer` struct with `validation.ValidateStruct`,
 validation will "dive" into the `Address` field.
 
@@ -292,8 +292,8 @@ fmt.Println(err)
 // 0: (City: cannot be blank; Street: cannot be blank.); 2: (Street: cannot be blank; Zip: must be in a valid format.).
 ```
 
-When using `validation.ValidateStruct` to validate a struct, the above validation procedure also applies to those struct 
-fields which are map/slices/arrays of validatables. 
+When using `validation.ValidateStruct` to validate a struct, the above validation procedure also applies to those struct
+fields which are map/slices/arrays of validatables.
 
 
 ### Pointers
@@ -503,7 +503,7 @@ fmt.Println(err)
 
 ### Rule Groups
 
-When a combination of several rules are used in multiple places, you may use the following trick to create a 
+When a combination of several rules are used in multiple places, you may use the following trick to create a
 rule group so that your code is more maintainable.
 
 ```go

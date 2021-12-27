@@ -139,17 +139,17 @@ func (o Info) MarshalJSON() ([]byte, error) {
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
-	
+
 
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -188,5 +188,3 @@ func (v *NullableInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

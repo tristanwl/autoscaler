@@ -139,17 +139,17 @@ func (o LoadbalancerProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Ip != nil {
 		toSerialize["ip"] = o.Ip
 	}
-	
+
 
 	if o.Dhcp != nil {
 		toSerialize["dhcp"] = o.Dhcp
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -188,5 +188,3 @@ func (v *NullableLoadbalancerProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

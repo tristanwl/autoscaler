@@ -176,22 +176,22 @@ func (o RequestStatus) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	
+
 
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	
+
 
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
-	
+
 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -230,5 +230,3 @@ func (v *NullableRequestStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

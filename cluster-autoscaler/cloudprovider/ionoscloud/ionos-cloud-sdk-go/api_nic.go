@@ -731,7 +731,7 @@ func (r ApiDatacentersServersNicsFirewallrulesGetRequest) Execute() (FirewallRul
 }
 
 /*
- * DatacentersServersNicsFirewallrulesGet List Firewall Rules 
+ * DatacentersServersNicsFirewallrulesGet List Firewall Rules
  * Retrieves a list of firewall rules associated with a particular NIC
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the datacenter
@@ -1436,7 +1436,7 @@ func (r ApiDatacentersServersNicsGetRequest) Execute() (Nics, *APIResponse, erro
 }
 
 /*
- * DatacentersServersNicsGet List Nics 
+ * DatacentersServersNicsGet List Nics
  * Retrieves a list of NICs.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the datacenter

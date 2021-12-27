@@ -93,4 +93,3 @@ Additionally, the `tag.sh` script generates commit logs since last release which
 <!-- ``` -->
 <!-- ./verify_examples.sh -->
 <!-- ``` -->
-

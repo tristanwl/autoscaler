@@ -253,32 +253,32 @@ func (o DatacenterProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
-	
+
 
 	if o.Location != nil {
 		toSerialize["location"] = o.Location
 	}
-	
+
 
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
 	}
-	
+
 
 	if o.Features != nil {
 		toSerialize["features"] = o.Features
 	}
-	
+
 
 	if o.SecAuthProtection != nil {
 		toSerialize["secAuthProtection"] = o.SecAuthProtection
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -317,5 +317,3 @@ func (v *NullableDatacenterProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

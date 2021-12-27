@@ -63,7 +63,7 @@ func (o KubernetesNodePoolLan) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -102,5 +102,3 @@ func (v *NullableKubernetesNodePoolLan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

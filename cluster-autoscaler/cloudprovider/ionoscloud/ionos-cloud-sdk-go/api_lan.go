@@ -706,7 +706,7 @@ func (r ApiDatacentersLansNicsGetRequest) Execute() (LanNics, *APIResponse, erro
 }
 
 /*
- * DatacentersLansNicsGet List Lan Members 
+ * DatacentersLansNicsGet List Lan Members
  * You can retrieve a list of nics attached to a lan
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the datacenter
@@ -875,7 +875,7 @@ func (r ApiDatacentersLansNicsPostRequest) Execute() (Nic, *APIResponse, error) 
 
 /*
  * DatacentersLansNicsPost Attach a nic
- * This will attach a pre-existing nic to a lan. 
+ * This will attach a pre-existing nic to a lan.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the datacenter
  * @param lanId The unique ID of the LAN

@@ -215,27 +215,27 @@ func (o LabelProperties) MarshalJSON() ([]byte, error) {
 	if o.Key != nil {
 		toSerialize["key"] = o.Key
 	}
-	
+
 
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
 	}
-	
+
 
 	if o.ResourceId != nil {
 		toSerialize["resourceId"] = o.ResourceId
 	}
-	
+
 
 	if o.ResourceType != nil {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	
+
 
 	if o.ResourceHref != nil {
 		toSerialize["resourceHref"] = o.ResourceHref
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -274,5 +274,3 @@ func (v *NullableLabelProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

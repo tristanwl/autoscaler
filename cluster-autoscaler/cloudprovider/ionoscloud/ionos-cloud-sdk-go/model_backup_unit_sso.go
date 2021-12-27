@@ -63,7 +63,7 @@ func (o BackupUnitSSO) MarshalJSON() ([]byte, error) {
 	if o.SsoUrl != nil {
 		toSerialize["ssoUrl"] = o.SsoUrl
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -102,5 +102,3 @@ func (v *NullableBackupUnitSSO) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

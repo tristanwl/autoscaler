@@ -177,22 +177,22 @@ func (o LanProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.IpFailover != nil {
 		toSerialize["ipFailover"] = o.IpFailover
 	}
-	
+
 
 	if o.Pcc != nil {
 		toSerialize["pcc"] = o.Pcc
 	}
-	
+
 
 	if o.Public != nil {
 		toSerialize["public"] = o.Public
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -231,5 +231,3 @@ func (v *NullableLanProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

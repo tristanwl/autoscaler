@@ -20,7 +20,7 @@ type ImageProperties struct {
 	Name *string `json:"name,omitempty"`
 	// Human readable description
 	Description *string `json:"description,omitempty"`
-	// Location of that image/snapshot. 
+	// Location of that image/snapshot.
 	Location *string `json:"location,omitempty"`
 	// The size of the image in GB
 	Size *float32 `json:"size,omitempty"`
@@ -671,87 +671,87 @@ func (o ImageProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
-	
+
 
 	if o.Location != nil {
 		toSerialize["location"] = o.Location
 	}
-	
+
 
 	if o.Size != nil {
 		toSerialize["size"] = o.Size
 	}
-	
+
 
 	if o.CpuHotPlug != nil {
 		toSerialize["cpuHotPlug"] = o.CpuHotPlug
 	}
-	
+
 
 	if o.CpuHotUnplug != nil {
 		toSerialize["cpuHotUnplug"] = o.CpuHotUnplug
 	}
-	
+
 
 	if o.RamHotPlug != nil {
 		toSerialize["ramHotPlug"] = o.RamHotPlug
 	}
-	
+
 
 	if o.RamHotUnplug != nil {
 		toSerialize["ramHotUnplug"] = o.RamHotUnplug
 	}
-	
+
 
 	if o.NicHotPlug != nil {
 		toSerialize["nicHotPlug"] = o.NicHotPlug
 	}
-	
+
 
 	if o.NicHotUnplug != nil {
 		toSerialize["nicHotUnplug"] = o.NicHotUnplug
 	}
-	
+
 
 	if o.DiscVirtioHotPlug != nil {
 		toSerialize["discVirtioHotPlug"] = o.DiscVirtioHotPlug
 	}
-	
+
 
 	if o.DiscVirtioHotUnplug != nil {
 		toSerialize["discVirtioHotUnplug"] = o.DiscVirtioHotUnplug
 	}
-	
+
 
 	if o.DiscScsiHotPlug != nil {
 		toSerialize["discScsiHotPlug"] = o.DiscScsiHotPlug
 	}
-	
+
 
 	if o.DiscScsiHotUnplug != nil {
 		toSerialize["discScsiHotUnplug"] = o.DiscScsiHotUnplug
 	}
-	
+
 
 	if o.LicenceType != nil {
 		toSerialize["licenceType"] = o.LicenceType
 	}
-	
+
 
 	if o.ImageType != nil {
 		toSerialize["imageType"] = o.ImageType
 	}
-	
+
 
 	if o.Public != nil {
 		toSerialize["public"] = o.Public
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -790,5 +790,3 @@ func (v *NullableImageProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

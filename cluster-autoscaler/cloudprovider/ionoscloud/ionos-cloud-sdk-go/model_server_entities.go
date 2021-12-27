@@ -136,17 +136,17 @@ func (o ServerEntities) MarshalJSON() ([]byte, error) {
 	if o.Cdroms != nil {
 		toSerialize["cdroms"] = o.Cdroms
 	}
-	
+
 
 	if o.Volumes != nil {
 		toSerialize["volumes"] = o.Volumes
 	}
-	
+
 
 	if o.Nics != nil {
 		toSerialize["nics"] = o.Nics
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -185,5 +185,3 @@ func (v *NullableServerEntities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

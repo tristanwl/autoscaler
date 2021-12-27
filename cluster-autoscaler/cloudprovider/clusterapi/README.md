@@ -89,7 +89,7 @@ cluster-autoscaler --cloud-provider=clusterapi --kubeconfig=/mnt/workload.kubeco
 Use a single provided kubeconfig for both management and workload cluster:
 ```
 cluster-autoscaler --cloud-provider=clusterapi --kubeconfig=/mnt/workload.kubeconfig
-``` 
+```
 
 ## Enabling Autoscaling
 
@@ -137,4 +137,3 @@ envsubst < examples/deployment.yaml | kubectl apply -f-
 The `cluster-autoscaler-management` role for accessing cluster api scalable resources is scoped to `ClusterRole`.
 This may not be ideal for all environments (eg. Multi tenant environments).
 In such cases, it is recommended to scope it to a `Role` mapped to a specific namespace.
-

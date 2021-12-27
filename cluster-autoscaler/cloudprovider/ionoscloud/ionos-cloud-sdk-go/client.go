@@ -424,7 +424,7 @@ func (c *APIClient) prepareRequest(
     if query.Get(DepthParam) == "" {
         query.Add(DepthParam, DefaultDepth)
     }
- 
+
 
 	// Encode the parameters.
 	url.RawQuery = query.Encode()

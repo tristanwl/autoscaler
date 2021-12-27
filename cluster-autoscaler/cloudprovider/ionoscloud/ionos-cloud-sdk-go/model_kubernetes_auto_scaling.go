@@ -101,12 +101,12 @@ func (o KubernetesAutoScaling) MarshalJSON() ([]byte, error) {
 	if o.MinNodeCount != nil {
 		toSerialize["minNodeCount"] = o.MinNodeCount
 	}
-	
+
 
 	if o.MaxNodeCount != nil {
 		toSerialize["maxNodeCount"] = o.MaxNodeCount
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -145,5 +145,3 @@ func (v *NullableKubernetesAutoScaling) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

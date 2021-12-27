@@ -1344,7 +1344,7 @@ func (r ApiUmGroupsSharesGetRequest) Execute() (GroupShares, *APIResponse, error
 }
 
 /*
- * UmGroupsSharesGet List Group Shares 
+ * UmGroupsSharesGet List Group Shares
  * You can retrieve a list of all resources along with their permissions of the group
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param groupId
@@ -1510,7 +1510,7 @@ func (r ApiUmGroupsSharesPostRequest) Execute() (GroupShare, *APIResponse, error
 
 /*
  * UmGroupsSharesPost Add a resource to a group
- * This will add a resource to the group. 
+ * This will add a resource to the group.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param groupId
  * @param resourceId
@@ -2012,7 +2012,7 @@ func (r ApiUmGroupsUsersGetRequest) Execute() (GroupMembers, *APIResponse, error
 }
 
 /*
- * UmGroupsUsersGet List Group Members 
+ * UmGroupsUsersGet List Group Members
  * You can retrieve a list of users who are members of the group
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param groupId
@@ -2177,7 +2177,7 @@ func (r ApiUmGroupsUsersPostRequest) Execute() (User, *APIResponse, error) {
 
 /*
  * UmGroupsUsersPost Add a user to a group
- * This will attach a pre-existing user to a group. 
+ * This will attach a pre-existing user to a group.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param groupId
  * @return ApiUmGroupsUsersPostRequest
@@ -3134,7 +3134,7 @@ func (r ApiUmUsersGetRequest) Execute() (Users, *APIResponse, error) {
 }
 
 /*
- * UmUsersGet List all Users 
+ * UmUsersGet List all Users
  * You can retrieve a complete list of users under your account
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiUmUsersGetRequest

@@ -138,17 +138,17 @@ func (o KubernetesClusterProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.K8sVersion != nil {
 		toSerialize["k8sVersion"] = o.K8sVersion
 	}
-	
+
 
 	if o.MaintenanceWindow != nil {
 		toSerialize["maintenanceWindow"] = o.MaintenanceWindow
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -187,5 +187,3 @@ func (v *NullableKubernetesClusterProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

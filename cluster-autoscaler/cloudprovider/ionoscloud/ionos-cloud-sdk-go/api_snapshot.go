@@ -370,7 +370,7 @@ func (r ApiSnapshotsGetRequest) Execute() (Snapshots, *APIResponse, error) {
 }
 
 /*
- * SnapshotsGet List Snapshots 
+ * SnapshotsGet List Snapshots
  * Retrieve a list of available snapshots.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiSnapshotsGetRequest

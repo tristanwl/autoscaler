@@ -329,42 +329,42 @@ func (o UserProperties) MarshalJSON() ([]byte, error) {
 	if o.Firstname != nil {
 		toSerialize["firstname"] = o.Firstname
 	}
-	
+
 
 	if o.Lastname != nil {
 		toSerialize["lastname"] = o.Lastname
 	}
-	
+
 
 	if o.Email != nil {
 		toSerialize["email"] = o.Email
 	}
-	
+
 
 	if o.Administrator != nil {
 		toSerialize["administrator"] = o.Administrator
 	}
-	
+
 
 	if o.ForceSecAuth != nil {
 		toSerialize["forceSecAuth"] = o.ForceSecAuth
 	}
-	
+
 
 	if o.SecAuthActive != nil {
 		toSerialize["secAuthActive"] = o.SecAuthActive
 	}
-	
+
 
 	if o.S3CanonicalUserId != nil {
 		toSerialize["s3CanonicalUserId"] = o.S3CanonicalUserId
 	}
-	
+
 
 	if o.Password != nil {
 		toSerialize["password"] = o.Password
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -403,5 +403,3 @@ func (v *NullableUserProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

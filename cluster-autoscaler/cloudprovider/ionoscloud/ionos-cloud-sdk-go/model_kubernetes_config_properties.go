@@ -63,7 +63,7 @@ func (o KubernetesConfigProperties) MarshalJSON() ([]byte, error) {
 	if o.Kubeconfig != nil {
 		toSerialize["kubeconfig"] = o.Kubeconfig
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -102,5 +102,3 @@ func (v *NullableKubernetesConfigProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

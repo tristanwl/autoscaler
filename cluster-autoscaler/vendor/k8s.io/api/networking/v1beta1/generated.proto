@@ -302,4 +302,3 @@ message IngressTLS {
   // +optional
   optional string secretName = 2;
 }
-

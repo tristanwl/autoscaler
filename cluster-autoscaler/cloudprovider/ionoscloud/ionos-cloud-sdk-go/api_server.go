@@ -388,7 +388,7 @@ func (r ApiDatacentersServersCdromsGetRequest) Execute() (Cdroms, *APIResponse, 
 }
 
 /*
- * DatacentersServersCdromsGet List attached CD-ROMs 
+ * DatacentersServersCdromsGet List attached CD-ROMs
  * You can retrieve a list of CD-ROMs attached to the server.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the Datacenter
@@ -557,7 +557,7 @@ func (r ApiDatacentersServersCdromsPostRequest) Execute() (Image, *APIResponse, 
 
 /*
  * DatacentersServersCdromsPost Attach a CD-ROM
- * You can attach a CD-ROM to an existing server. You can attach up to 2 CD-ROMs to one server. 
+ * You can attach a CD-ROM to an existing server. You can attach up to 2 CD-ROMs to one server.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the Datacenter
  * @param serverId The unique ID of the Server
@@ -1054,7 +1054,7 @@ func (r ApiDatacentersServersGetRequest) Execute() (Servers, *APIResponse, error
 }
 
 /*
- * DatacentersServersGet List Servers 
+ * DatacentersServersGet List Servers
  * You can retrieve a list of servers within a datacenter
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the datacenter

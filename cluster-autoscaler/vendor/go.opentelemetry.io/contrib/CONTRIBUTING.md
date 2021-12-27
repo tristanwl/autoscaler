@@ -102,7 +102,7 @@ Any Maintainer can merge the PR once it is **ready to merge**.
 ## Adding a new Contrib package
 
 To add a new contrib package follow an existing one. An empty Sample instrumentation
-provides base structure with an example and a test. Each contrib package 
+provides base structure with an example and a test. Each contrib package
 should be its own module. A contrib package may contain more than one go package.
 
 ### Folder Structure

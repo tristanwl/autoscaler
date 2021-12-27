@@ -20,7 +20,7 @@ You should also take a look at the notes and "gotchas" for your specific cloud p
 * [CloudStack](./cloudprovider/cloudstack/README.md)
 * [HuaweiCloud](./cloudprovider/huaweicloud/README.md)
 * [Hetzner](./cloudprovider/hetzner/README.md)
-* [Packet](./cloudprovider/packet/README.md#notes) 
+* [Packet](./cloudprovider/packet/README.md#notes)
 * [IonosCloud](./cloudprovider/ionoscloud/README.md)
 * [OVHcloud](./cloudprovider/ovhcloud/README.md)
 * [Linode](./cloudprovider/linode/README.md)

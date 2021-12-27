@@ -101,12 +101,12 @@ func (o KubernetesMaintenanceWindow) MarshalJSON() ([]byte, error) {
 	if o.DayOfTheWeek != nil {
 		toSerialize["dayOfTheWeek"] = o.DayOfTheWeek
 	}
-	
+
 
 	if o.Time != nil {
 		toSerialize["time"] = o.Time
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -145,5 +145,3 @@ func (v *NullableKubernetesMaintenanceWindow) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -701,7 +701,7 @@ message LinuxContainerConfig {
     LinuxContainerSecurityContext security_context = 2;
 }
 
-// WindowsSandboxSecurityContext holds platform-specific configurations that will be 
+// WindowsSandboxSecurityContext holds platform-specific configurations that will be
 // applied to a sandbox.
 // These settings will only apply to the sandbox container.
 message WindowsSandboxSecurityContext {
@@ -1018,10 +1018,10 @@ message UpdateContainerResourcesRequest {
     string container_id = 1;
     // Resource configuration specific to Linux containers.
     LinuxContainerResources linux = 2;
-    // Resource configuration specific to Windows containers. 
+    // Resource configuration specific to Windows containers.
     WindowsContainerResources windows = 3;
-    // Unstructured key-value map holding arbitrary additional information for 
-    // container resources updating. This can be used for specifying experimental 
+    // Unstructured key-value map holding arbitrary additional information for
+    // container resources updating. This can be used for specifying experimental
     // resources to update or other options to use when updating the container.
     map<string, string> annotations = 4;
 }

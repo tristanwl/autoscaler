@@ -173,22 +173,22 @@ func (o RequestProperties) MarshalJSON() ([]byte, error) {
 	if o.Method != nil {
 		toSerialize["method"] = o.Method
 	}
-	
+
 
 	if o.Headers != nil {
 		toSerialize["headers"] = o.Headers
 	}
-	
+
 
 	if o.Body != nil {
 		toSerialize["body"] = o.Body
 	}
-	
+
 
 	if o.Url != nil {
 		toSerialize["url"] = o.Url
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -227,5 +227,3 @@ func (v *NullableRequestProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
