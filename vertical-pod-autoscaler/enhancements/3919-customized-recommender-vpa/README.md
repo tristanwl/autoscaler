@@ -21,32 +21,32 @@
 
 ## Summary
 
-Today, the current VPA recommends CPU/Mem requests based on one recommender, 
-which recommends the future requests based on the historical usage observed in a 
-rolling time window. As there is no universal recommendation policy that applies to all 
-types of workload, this KEP suggests supporting multiple customized recommenders in VPA.  
-Thus, users can run different recommenders for different workloads, as they may exhibit 
+Today, the current VPA recommends CPU/Mem requests based on one recommender,
+which recommends the future requests based on the historical usage observed in a
+rolling time window. As there is no universal recommendation policy that applies to all
+types of workload, this KEP suggests supporting multiple customized recommenders in VPA.
+Thus, users can run different recommenders for different workloads, as they may exhibit
 very distinct resource usage behaviors.
 
 ## Motivation
 
-A VPA is used to recommend the requested resources of containers in pods when the actual CPU/memory usage of a container 
-is significantly different from the resources requested. Resource usage-based recommendation 
-is the basic approach that resizes containers according to the actual usage observed and is 
-implemented in the default VPA recommender. Users can configure the time window and a certain 
+A VPA is used to recommend the requested resources of containers in pods when the actual CPU/memory usage of a container
+is significantly different from the resources requested. Resource usage-based recommendation
+is the basic approach that resizes containers according to the actual usage observed and is
+implemented in the default VPA recommender. Users can configure the time window and a certain
 percentile of observed usage in the past as the prediction of future requests/limits for CPU/memory.
 
-However, as containers running different types of workloads may have different resource usage patterns, 
-there is no universal policy that applies to all. The existing VPA recommender may not accurately 
-predict future resource usage when containers exhibit certain resource usage behaviors, 
-such as trending, periodically changing, or occasional spikes, resulting in significant 
-over-provisioning and OOM kills for microservices. Learning different types of resource usage 
-behaviors for workloads and applying different algorithms to improve resource utilization 
+However, as containers running different types of workloads may have different resource usage patterns,
+there is no universal policy that applies to all. The existing VPA recommender may not accurately
+predict future resource usage when containers exhibit certain resource usage behaviors,
+such as trending, periodically changing, or occasional spikes, resulting in significant
+over-provisioning and OOM kills for microservices. Learning different types of resource usage
+behaviors for workloads and applying different algorithms to improve resource utilization
 (CPU and Memory) predictions can significantly reduce over-provisioning and OOM kills in VPA.
 
 ### Goals
 
-- Allow the VPA object to specify a customized recommender to use. 
+- Allow the VPA object to specify a customized recommender to use.
 - Allow the VPA object to use the default recommender when no recommender is specified.
 
 ### Non-Goals
@@ -58,34 +58,34 @@ behaviors for workloads and applying different algorithms to improve resource ut
 
 ### User Stories
 
-#### Story 1 
+#### Story 1
 
 - Containers with Cyclic Patterns in Resource Usage
 
-Containers used in monitoring may receive load periodically to process but need to be long-running 
-to listen to incoming traffic. Thus, these containers usually exhibit cyclic patterns, alternating 
-between usage spikes and idling. Resizing containers according to usage observed in the previous 
-time window may always lead to under-provision for a short period when the load spikes just arrive. 
-The problem will happen for memory if the cyclic pattern length is >8 days. For CPU, the problem may 
-be visible for example with lower usage on the weekend. The problem will even lead to frequent pod evictions 
+Containers used in monitoring may receive load periodically to process but need to be long-running
+to listen to incoming traffic. Thus, these containers usually exhibit cyclic patterns, alternating
+between usage spikes and idling. Resizing containers according to usage observed in the previous
+time window may always lead to under-provision for a short period when the load spikes just arrive.
+The problem will happen for memory if the cyclic pattern length is >8 days. For CPU, the problem may
+be visible for example with lower usage on the weekend. The problem will even lead to frequent pod evictions
 when the pod was resized according to the idling period and the host resource has been taken by other pods.
 
-#### Story 2 
+#### Story 2
 
 - Containers with Different but Recurrent Behaviors in Resource Usage
 
-Containers running spark/deep learning training workloads are known to show recurring and repeating 
-patterns in resource usage. Prior research has shown that different but recurrent behaviors occur 
-for different containerized tasks, such as Spark or deep learning training. These common patterns can 
-be represented by phases, which display similar resource usage of computational resources over time. 
-There are common sequences of patterns for different executions of the workload and they can be used 
-to proactively predict future resource usage more accurately. The default recommender in the current 
+Containers running spark/deep learning training workloads are known to show recurring and repeating
+patterns in resource usage. Prior research has shown that different but recurrent behaviors occur
+for different containerized tasks, such as Spark or deep learning training. These common patterns can
+be represented by phases, which display similar resource usage of computational resources over time.
+There are common sequences of patterns for different executions of the workload and they can be used
+to proactively predict future resource usage more accurately. The default recommender in the current
 VPA adopts a reactive approach so a more proactive recommender is needed for these types of workload.
 
 ### Implementation Details
 
-The following describes the details of implementing a first-citizen approach to support the customized 
-recommender. Namely, a dedicated field `recommenderName` is added to the VPA crd definition in 
+The following describes the details of implementing a first-citizen approach to support the customized
+recommender. Namely, a dedicated field `recommenderName` is added to the VPA crd definition in
 `deploy/vpa-v1.crd.yaml`.
 
 ```yaml
@@ -106,7 +106,7 @@ validation:
            type: object
 ```
 
-Correspondingly, the `VerticalPodAutoscalerSpec` in `pkg/apis/autoscaling.k8s.io/v1/types.go` 
+Correspondingly, the `VerticalPodAutoscalerSpec` in `pkg/apis/autoscaling.k8s.io/v1/types.go`
 should be updated to include the `recommenderName` field.
 
 ```golang
@@ -137,13 +137,13 @@ type VerticalPodAutoscalerSpec struct {
 	// resources for all containers in the pod, without additional constraints.
 	// +optional
 	ResourcePolicy *PodResourcePolicy `json:"resourcePolicy,omitempty" protobuf:"bytes,3,opt,name=resourcePolicy"`
-  
+
   // Name of the recommender responsible for generating recommendation for this object.
   RecommenderName []string `json:"recommenderName,omitempty" protobuf:"bytes,4,opt,name=recommenderName"`
 }
 ```
 
-When creating a recommender object for recommendations, the recommender main routine should initiate itself 
+When creating a recommender object for recommendations, the recommender main routine should initiate itself
 with a predefined recommender name, which can be defined as a constant in the `pkg/recomender/main.go` routine,
 
 ```golang
@@ -185,7 +185,7 @@ func NewClusterState(recommender_name string) *ClusterState {
 }
 ```
 
-Therefore, when loading VPA objects to the `clusterStateFeeder`, it can use the field selector to select VPA CRDs that 
+Therefore, when loading VPA objects to the `clusterStateFeeder`, it can use the field selector to select VPA CRDs that
 have `recommenderName` equal to the current clusterState’s `RecommenderName`.
 ```golang
 // Fetch VPA objects and load them into the cluster state.
@@ -226,21 +226,21 @@ Spec:
  recommenderName: default
  targetRef:
    apiVersion: "apps/v1"
-   ... ... 
+   ... ...
 ```
 
 ### Deployment Details
-The customized recommender is supposed to be deployed as a separate deployment that is chosen 
+The customized recommender is supposed to be deployed as a separate deployment that is chosen
 by different sets of VPA objects.Each VPA object is supposed to choose only one recommender at a time.
-The way how the default recommender and the customized recommender are running and interacting with VPA objects 
+The way how the default recommender and the customized recommender are running and interacting with VPA objects
 are shown in the following drawing.
 
 <img src="images/deployment.png" alt="deployment" width="720" height="360"/>
 
-Though we do not support a VPA object to use multiple recommenders in this proposal, we leave the possibility of necessary  
+Though we do not support a VPA object to use multiple recommenders in this proposal, we leave the possibility of necessary
 changes of using multiple recommenders in the future. Namely, we define `recommenderName` to be an array instead of a string, but we support one element only in this proposal. We modify the admission controller to validate that the array has <= 1 elements.
 
-We will add the following check in the `func validateVPA(vpa *vpa_types.VerticalPodAutoscaler, isCreate bool)` function. 
+We will add the following check in the `func validateVPA(vpa *vpa_types.VerticalPodAutoscaler, isCreate bool)` function.
 ```
 	if len(vpa.Spec.RecommenderName) > 1 {
 		return fmt.Errorf("VPA object shouldn't specify more than one recommenderNames.")
@@ -254,32 +254,32 @@ We will add the following check in the `func validateVPA(vpa *vpa_types.Vertical
 - Add e2e test demonstrating the default recommender ignores a VPA which specifies an alternate recommender.
 
 ### Upgrade / Downgrade Strategy
-For cluster upgrades, the VPA from the previous version will continue working as before. 
+For cluster upgrades, the VPA from the previous version will continue working as before.
 There is no change in behavior or flags which have to be enabled or disabled.
 
 ## Alternatives
 
 ### Develop a plugin framework for customizable recommenders.
-Add a webhook system for customized recommendations. The default VPA recommender would 
-call any available recommendation webhooks, and if any of them make a recommendation, 
-the recommender would use that recommendation instead of making its own. If none make 
+Add a webhook system for customized recommendations. The default VPA recommender would
+call any available recommendation webhooks, and if any of them make a recommendation,
+the recommender would use that recommendation instead of making its own. If none make
 a recommendation, it would make its recommendation as it currently does. The plugin alternative
-is rejected because it involves much more design changes and code changes. It might be considered in the future if there are 
+is rejected because it involves much more design changes and code changes. It might be considered in the future if there are
 more use cases where running multiple recommenders for the same VPA object is needed.
 
 ### Develop a label selector approach.
-Add a label for the CRD object to denote the recommender’s name. When making 
-recommendations in the recommender, only the VpaCrds with the label 
-`recommender=default` will be loaded and updated by the existing recommender. 
-A label selector approach is rejected because it is too powerful and users can easily 
+Add a label for the CRD object to denote the recommender’s name. When making
+recommendations in the recommender, only the VpaCrds with the label
+`recommender=default` will be loaded and updated by the existing recommender.
+A label selector approach is rejected because it is too powerful and users can easily
 ignore those labels and misconfigure the VPA objects.
 
 ## Out of Scope
 
-- Although this proposal will enable alternate recommenders, no alternate recommenders 
+- Although this proposal will enable alternate recommenders, no alternate recommenders
 will be created as part of this proposal.
-- This proposal will not support running multiple recommenders for the same VPA object. Each VPA object 
-is supposed to use only one recommender. 
+- This proposal will not support running multiple recommenders for the same VPA object. Each VPA object
+is supposed to use only one recommender.
 
 ## Implementation History
 
@@ -293,6 +293,3 @@ Major milestones might include:
 - the version of Kubernetes where the KEP graduated to general availability
 - when the KEP was retired or superseded
 -->
-
-
-

@@ -139,17 +139,17 @@ func (o LocationProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Features != nil {
 		toSerialize["features"] = o.Features
 	}
-	
+
 
 	if o.ImageAliases != nil {
 		toSerialize["imageAliases"] = o.ImageAliases
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -188,5 +188,3 @@ func (v *NullableLocationProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

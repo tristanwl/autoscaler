@@ -327,42 +327,42 @@ func (o ServerProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Cores != nil {
 		toSerialize["cores"] = o.Cores
 	}
-	
+
 
 	if o.Ram != nil {
 		toSerialize["ram"] = o.Ram
 	}
-	
+
 
 	if o.AvailabilityZone != nil {
 		toSerialize["availabilityZone"] = o.AvailabilityZone
 	}
-	
+
 
 	if o.VmState != nil {
 		toSerialize["vmState"] = o.VmState
 	}
-	
+
 
 	if o.BootCdrom != nil {
 		toSerialize["bootCdrom"] = o.BootCdrom
 	}
-	
+
 
 	if o.BootVolume != nil {
 		toSerialize["bootVolume"] = o.BootVolume
 	}
-	
+
 
 	if o.CpuFamily != nil {
 		toSerialize["cpuFamily"] = o.CpuFamily
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -401,5 +401,3 @@ func (v *NullableServerProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

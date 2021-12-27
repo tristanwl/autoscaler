@@ -101,12 +101,12 @@ func (o S3KeyProperties) MarshalJSON() ([]byte, error) {
 	if o.SecretKey != nil {
 		toSerialize["secretKey"] = o.SecretKey
 	}
-	
+
 
 	if o.Active != nil {
 		toSerialize["active"] = o.Active
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -145,5 +145,3 @@ func (v *NullableS3KeyProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

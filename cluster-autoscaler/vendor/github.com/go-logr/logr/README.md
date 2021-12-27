@@ -60,7 +60,7 @@ There are implementations for the following logging libraries:
   Similarly to searchability, if you maintain conventions around your
   keys, it becomes easy to gather all log lines related to a particular
   concept.
- 
+
 - **Structured logs allow better dimensions of filtering**: if you have
   structure to your logs, you've got more precise control over how much
   information is logged -- you might choose in a particular configuration
@@ -79,7 +79,7 @@ There are implementations for the following logging libraries:
 operations**.  V-levels provide a way for a given package to distinguish
 the relative importance or verbosity of a given log message.  Then, if
 a particular logger or package is logging too many messages, the user
-of the package can simply change the v-levels for that library. 
+of the package can simply change the v-levels for that library.
 
 ## Why not more named levels, like Warning?
 

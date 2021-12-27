@@ -388,7 +388,7 @@ func (r ApiDatacentersLoadbalancersBalancednicsGetRequest) Execute() (BalancedNi
 }
 
 /*
- * DatacentersLoadbalancersBalancednicsGet List Load Balancer Members 
+ * DatacentersLoadbalancersBalancednicsGet List Load Balancer Members
  * You can retrieve a list of nics attached to a Load Balancer
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the datacenter
@@ -557,7 +557,7 @@ func (r ApiDatacentersLoadbalancersBalancednicsPostRequest) Execute() (Nic, *API
 
 /*
  * DatacentersLoadbalancersBalancednicsPost Attach a nic to Load Balancer
- * This will attach a pre-existing nic to a Load Balancer. 
+ * This will attach a pre-existing nic to a Load Balancer.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param datacenterId The unique ID of the datacenter
  * @param loadbalancerId The unique ID of the Load Balancer

@@ -457,7 +457,7 @@ search  (search for a keyword in charts)  show  (show information of a chart)  s
 
 # With descriptions and Mode 'MenuComplete' The description of the current selected value will be displayed below the suggestions.
 $ helm s[tab]
-search    show     status  
+search    show     status
 
 search for a keyword in charts
 

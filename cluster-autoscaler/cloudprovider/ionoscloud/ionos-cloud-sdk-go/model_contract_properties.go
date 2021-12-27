@@ -214,27 +214,27 @@ func (o ContractProperties) MarshalJSON() ([]byte, error) {
 	if o.ContractNumber != nil {
 		toSerialize["contractNumber"] = o.ContractNumber
 	}
-	
+
 
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
 	}
-	
+
 
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	
+
 
 	if o.RegDomain != nil {
 		toSerialize["regDomain"] = o.RegDomain
 	}
-	
+
 
 	if o.ResourceLimits != nil {
 		toSerialize["resourceLimits"] = o.ResourceLimits
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -273,5 +273,3 @@ func (v *NullableContractProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,7 +18,7 @@ import (
 type RequestStatusMetadata struct {
 	Status *string `json:"status,omitempty"`
 	Message *string `json:"message,omitempty"`
-	// Resource's Entity Tag as defined in http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.11 . Entity Tag is also added as an 'ETag response header to requests which don't use 'depth' parameter. 
+	// Resource's Entity Tag as defined in http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.11 . Entity Tag is also added as an 'ETag response header to requests which don't use 'depth' parameter.
 	Etag *string `json:"etag,omitempty"`
 	Targets *[]RequestTarget `json:"targets,omitempty"`
 }
@@ -174,22 +174,22 @@ func (o RequestStatusMetadata) MarshalJSON() ([]byte, error) {
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	
+
 
 	if o.Message != nil {
 		toSerialize["message"] = o.Message
 	}
-	
+
 
 	if o.Etag != nil {
 		toSerialize["etag"] = o.Etag
 	}
-	
+
 
 	if o.Targets != nil {
 		toSerialize["targets"] = o.Targets
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -228,5 +228,3 @@ func (v *NullableRequestStatusMetadata) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

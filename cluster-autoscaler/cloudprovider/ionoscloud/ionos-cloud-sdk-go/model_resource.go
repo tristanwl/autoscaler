@@ -250,32 +250,32 @@ func (o Resource) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	
+
 
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	
+
 
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
-	
+
 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	
+
 
 	if o.Properties != nil {
 		toSerialize["properties"] = o.Properties
 	}
-	
+
 
 	if o.Entities != nil {
 		toSerialize["entities"] = o.Entities
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -314,5 +314,3 @@ func (v *NullableResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

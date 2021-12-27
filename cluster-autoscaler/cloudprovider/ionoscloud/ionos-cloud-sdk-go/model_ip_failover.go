@@ -99,12 +99,12 @@ func (o IPFailover) MarshalJSON() ([]byte, error) {
 	if o.Ip != nil {
 		toSerialize["ip"] = o.Ip
 	}
-	
+
 
 	if o.NicUuid != nil {
 		toSerialize["nicUuid"] = o.NicUuid
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -143,5 +143,3 @@ func (v *NullableIPFailover) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

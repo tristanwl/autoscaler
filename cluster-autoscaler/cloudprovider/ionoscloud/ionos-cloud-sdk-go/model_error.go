@@ -100,12 +100,12 @@ func (o Error) MarshalJSON() ([]byte, error) {
 	if o.HttpStatus != nil {
 		toSerialize["httpStatus"] = o.HttpStatus
 	}
-	
+
 
 	if o.Messages != nil {
 		toSerialize["messages"] = o.Messages
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -144,5 +144,3 @@ func (v *NullableError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

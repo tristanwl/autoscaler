@@ -1270,4 +1270,3 @@ message SupplementalGroupsStrategyOptions {
   // +optional
   repeated IDRange ranges = 2;
 }
-

@@ -370,7 +370,7 @@ func (r ApiBackupunitsGetRequest) Execute() (BackupUnits, *APIResponse, error) {
 }
 
 /*
- * BackupunitsGet List Backup Units 
+ * BackupunitsGet List Backup Units
  * You can retrieve a complete list of backup Units that you have access to.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiBackupunitsGetRequest
@@ -700,7 +700,7 @@ func (r ApiBackupunitsPostRequest) Execute() (BackupUnit, *APIResponse, error) {
 
 /*
  * BackupunitsPost Create a Backup Unit
- * Create a Backup Unit. A Backup Unit is considered a resource like a virtual datacenter, IP Block, snapshot, etc. It shall be shareable via groups inside our User Management Feature 
+ * Create a Backup Unit. A Backup Unit is considered a resource like a virtual datacenter, IP Block, snapshot, etc. It shall be shareable via groups inside our User Management Feature
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiBackupunitsPostRequest
  */

@@ -62,7 +62,7 @@ func (o KubernetesClusterEntities) MarshalJSON() ([]byte, error) {
 	if o.Nodepools != nil {
 		toSerialize["nodepools"] = o.Nodepools
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -101,5 +101,3 @@ func (v *NullableKubernetesClusterEntities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -63,7 +63,7 @@ func (o S3ObjectStorageSSO) MarshalJSON() ([]byte, error) {
 	if o.SsoUrl != nil {
 		toSerialize["ssoUrl"] = o.SsoUrl
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -102,5 +102,3 @@ func (v *NullableS3ObjectStorageSSO) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

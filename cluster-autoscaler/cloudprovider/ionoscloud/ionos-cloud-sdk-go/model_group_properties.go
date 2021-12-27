@@ -405,52 +405,52 @@ func (o GroupProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.CreateDataCenter != nil {
 		toSerialize["createDataCenter"] = o.CreateDataCenter
 	}
-	
+
 
 	if o.CreateSnapshot != nil {
 		toSerialize["createSnapshot"] = o.CreateSnapshot
 	}
-	
+
 
 	if o.ReserveIp != nil {
 		toSerialize["reserveIp"] = o.ReserveIp
 	}
-	
+
 
 	if o.AccessActivityLog != nil {
 		toSerialize["accessActivityLog"] = o.AccessActivityLog
 	}
-	
+
 
 	if o.CreatePcc != nil {
 		toSerialize["createPcc"] = o.CreatePcc
 	}
-	
+
 
 	if o.S3Privilege != nil {
 		toSerialize["s3Privilege"] = o.S3Privilege
 	}
-	
+
 
 	if o.CreateBackupUnit != nil {
 		toSerialize["createBackupUnit"] = o.CreateBackupUnit
 	}
-	
+
 
 	if o.CreateInternetAccess != nil {
 		toSerialize["createInternetAccess"] = o.CreateInternetAccess
 	}
-	
+
 
 	if o.CreateK8sCluster != nil {
 		toSerialize["createK8sCluster"] = o.CreateK8sCluster
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -489,5 +489,3 @@ func (v *NullableGroupProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

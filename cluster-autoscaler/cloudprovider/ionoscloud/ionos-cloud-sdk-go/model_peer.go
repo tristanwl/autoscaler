@@ -210,27 +210,27 @@ func (o Peer) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	
+
 
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.DatacenterId != nil {
 		toSerialize["datacenterId"] = o.DatacenterId
 	}
-	
+
 
 	if o.DatacenterName != nil {
 		toSerialize["datacenterName"] = o.DatacenterName
 	}
-	
+
 
 	if o.Location != nil {
 		toSerialize["location"] = o.Location
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -269,5 +269,3 @@ func (v *NullablePeer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

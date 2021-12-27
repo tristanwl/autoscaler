@@ -173,22 +173,22 @@ func (o DatacenterEntities) MarshalJSON() ([]byte, error) {
 	if o.Servers != nil {
 		toSerialize["servers"] = o.Servers
 	}
-	
+
 
 	if o.Volumes != nil {
 		toSerialize["volumes"] = o.Volumes
 	}
-	
+
 
 	if o.Loadbalancers != nil {
 		toSerialize["loadbalancers"] = o.Loadbalancers
 	}
-	
+
 
 	if o.Lans != nil {
 		toSerialize["lans"] = o.Lans
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -227,5 +227,3 @@ func (v *NullableDatacenterEntities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -367,47 +367,47 @@ func (o FirewallruleProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Protocol != nil {
 		toSerialize["protocol"] = o.Protocol
 	}
-	
+
 
 	if o.SourceMac != nil {
 		toSerialize["sourceMac"] = o.SourceMac
 	}
-	
+
 
 	if o.SourceIp != nil {
 		toSerialize["sourceIp"] = o.SourceIp
 	}
-	
+
 
 	if o.TargetIp != nil {
 		toSerialize["targetIp"] = o.TargetIp
 	}
-	
+
 
 	if o.IcmpCode != nil {
 		toSerialize["icmpCode"] = o.IcmpCode
 	}
-	
+
 
 	if o.IcmpType != nil {
 		toSerialize["icmpType"] = o.IcmpType
 	}
-	
+
 
 	if o.PortRangeStart != nil {
 		toSerialize["portRangeStart"] = o.PortRangeStart
 	}
-	
+
 
 	if o.PortRangeEnd != nil {
 		toSerialize["portRangeEnd"] = o.PortRangeEnd
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -446,5 +446,3 @@ func (v *NullableFirewallruleProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

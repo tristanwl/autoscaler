@@ -12,7 +12,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- The `go.opentelemetry.io/contrib/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo` instrumentation now accepts a `WithCommandAttributeDisabled`, 
+- The `go.opentelemetry.io/contrib/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo` instrumentation now accepts a `WithCommandAttributeDisabled`,
    so the caller can specify whether to opt-out of tracing the mongo command. (#712)
 - Upgrade to v0.20.0 of `go.opentelemetry.io/otel`. (#758)
 - The B3 and Jaeger propagators now store their debug or deferred state in the context.Context instead of the SpanContext. (#758)

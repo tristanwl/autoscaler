@@ -215,27 +215,27 @@ func (o IpBlockProperties) MarshalJSON() ([]byte, error) {
 	if o.Ips != nil {
 		toSerialize["ips"] = o.Ips
 	}
-	
+
 
 	if o.Location != nil {
 		toSerialize["location"] = o.Location
 	}
-	
+
 
 	if o.Size != nil {
 		toSerialize["size"] = o.Size
 	}
-	
+
 
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.IpConsumers != nil {
 		toSerialize["ipConsumers"] = o.IpConsumers
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -274,5 +274,3 @@ func (v *NullableIpBlockProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

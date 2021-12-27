@@ -284,37 +284,37 @@ func (o IpConsumer) MarshalJSON() ([]byte, error) {
 	if o.Ip != nil {
 		toSerialize["ip"] = o.Ip
 	}
-	
+
 
 	if o.Mac != nil {
 		toSerialize["mac"] = o.Mac
 	}
-	
+
 
 	if o.NicId != nil {
 		toSerialize["nicId"] = o.NicId
 	}
-	
+
 
 	if o.ServerId != nil {
 		toSerialize["serverId"] = o.ServerId
 	}
-	
+
 
 	if o.ServerName != nil {
 		toSerialize["serverName"] = o.ServerName
 	}
-	
+
 
 	if o.DatacenterId != nil {
 		toSerialize["datacenterId"] = o.DatacenterId
 	}
-	
+
 
 	if o.DatacenterName != nil {
 		toSerialize["datacenterName"] = o.DatacenterName
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -353,5 +353,3 @@ func (v *NullableIpConsumer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

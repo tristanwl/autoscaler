@@ -177,22 +177,22 @@ func (o S3Keys) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	
+
 
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	
+
 
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
-	
+
 
 	if o.Items != nil {
 		toSerialize["items"] = o.Items
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -231,5 +231,3 @@ func (v *NullableS3Keys) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

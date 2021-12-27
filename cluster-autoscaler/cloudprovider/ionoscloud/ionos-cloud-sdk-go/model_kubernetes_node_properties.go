@@ -139,17 +139,17 @@ func (o KubernetesNodeProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.PublicIP != nil {
 		toSerialize["publicIP"] = o.PublicIP
 	}
-	
+
 
 	if o.K8sVersion != nil {
 		toSerialize["k8sVersion"] = o.K8sVersion
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -188,5 +188,3 @@ func (v *NullableKubernetesNodeProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

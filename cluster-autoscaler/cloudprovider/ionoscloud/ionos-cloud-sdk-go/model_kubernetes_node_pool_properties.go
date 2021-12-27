@@ -591,77 +591,77 @@ func (o KubernetesNodePoolProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.DatacenterId != nil {
 		toSerialize["datacenterId"] = o.DatacenterId
 	}
-	
+
 
 	if o.NodeCount != nil {
 		toSerialize["nodeCount"] = o.NodeCount
 	}
-	
+
 
 	if o.CpuFamily != nil {
 		toSerialize["cpuFamily"] = o.CpuFamily
 	}
-	
+
 
 	if o.CoresCount != nil {
 		toSerialize["coresCount"] = o.CoresCount
 	}
-	
+
 
 	if o.RamSize != nil {
 		toSerialize["ramSize"] = o.RamSize
 	}
-	
+
 
 	if o.AvailabilityZone != nil {
 		toSerialize["availabilityZone"] = o.AvailabilityZone
 	}
-	
+
 
 	if o.StorageType != nil {
 		toSerialize["storageType"] = o.StorageType
 	}
-	
+
 
 	if o.StorageSize != nil {
 		toSerialize["storageSize"] = o.StorageSize
 	}
-	
+
 
 	if o.K8sVersion != nil {
 		toSerialize["k8sVersion"] = o.K8sVersion
 	}
-	
+
 
 	if o.MaintenanceWindow != nil {
 		toSerialize["maintenanceWindow"] = o.MaintenanceWindow
 	}
-	
+
 
 	if o.AutoScaling != nil {
 		toSerialize["autoScaling"] = o.AutoScaling
 	}
-	
+
 
 	if o.Lans != nil {
 		toSerialize["lans"] = o.Lans
 	}
-	
+
 
 	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
-	
+
 
 	if o.Annotations != nil {
 		toSerialize["annotations"] = o.Annotations
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -700,5 +700,3 @@ func (v *NullableKubernetesNodePoolProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

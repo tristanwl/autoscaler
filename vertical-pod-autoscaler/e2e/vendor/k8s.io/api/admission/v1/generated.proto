@@ -157,4 +157,3 @@ message AdmissionReview {
   // +optional
   optional AdmissionResponse response = 2;
 }
-

@@ -177,22 +177,22 @@ func (o PrivateCrossConnectProperties) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	
+
 
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
-	
+
 
 	if o.Peers != nil {
 		toSerialize["peers"] = o.Peers
 	}
-	
+
 
 	if o.ConnectableDatacenters != nil {
 		toSerialize["connectableDatacenters"] = o.ConnectableDatacenters
 	}
-	
+
 	return json.Marshal(toSerialize)
 }
 
@@ -231,5 +231,3 @@ func (v *NullablePrivateCrossConnectProperties) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
